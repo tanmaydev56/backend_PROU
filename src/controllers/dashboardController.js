@@ -4,11 +4,11 @@ exports.getDashboardData = async (req, res) => {
   try {
     const stats = {};
 
-    // Total tasks
+    
     const total = await db.query("SELECT COUNT(*) AS total FROM tasks");
     stats.totalTasks = parseInt(total.rows[0].total);
 
-    // Completed tasks
+    
     const completed = await db.query(
       "SELECT COUNT(*) AS completed FROM tasks WHERE status = 'DONE'"
     );
@@ -19,7 +19,7 @@ exports.getDashboardData = async (req, res) => {
         ? ((stats.completedTasks / stats.totalTasks) * 100).toFixed(1)
         : 0;
 
-    // Overdue tasks
+   
     const overdue = await db.query(
       `
       SELECT COUNT(*) AS overdue
@@ -31,7 +31,7 @@ exports.getDashboardData = async (req, res) => {
     );
     stats.overdueTasks = parseInt(overdue.rows[0].overdue);
 
-    // Tasks per employee
+    
     const perEmployee = await db.query(
       `
       SELECT e.name, COUNT(t.id) AS taskCount

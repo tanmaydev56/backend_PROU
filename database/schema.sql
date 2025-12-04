@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS tasks;
 
--- Employees Table
+
 CREATE TABLE employees (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -10,7 +10,6 @@ CREATE TABLE employees (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tasks Table
 CREATE TABLE tasks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT NOT NULL,

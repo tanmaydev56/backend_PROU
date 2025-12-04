@@ -1,8 +1,5 @@
 const db = require("../db");
 
-// -------------------------------------------
-// GET /tasks
-// -------------------------------------------
 exports.getTasks = async (req, res) => {
   try {
     let query = `
@@ -38,9 +35,7 @@ exports.getTasks = async (req, res) => {
   }
 };
 
-// -------------------------------------------
-// POST /tasks (Admin Only)
-// -------------------------------------------
+
 exports.addTask = async (req, res) => {
   if (req.header("x-user-role") !== "admin") {
     return res.status(403).json({ error: "Only admins can create tasks" });
@@ -70,9 +65,6 @@ exports.addTask = async (req, res) => {
   }
 };
 
-// -------------------------------------------
-// PUT /tasks/:id (Admin Only)
-// -------------------------------------------
 exports.updateTask = async (req, res) => {
   if (req.header("x-user-role") !== "admin") {
     return res.status(403).json({ error: "Only admins can update tasks" });

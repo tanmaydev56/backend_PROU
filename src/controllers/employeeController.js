@@ -1,6 +1,5 @@
 const db = require("../db");
 
-// GET all employees
 exports.getEmployees = async (req, res) => {
   try {
     const result = await db.query("SELECT * FROM employees ORDER BY id ASC");
@@ -10,7 +9,7 @@ exports.getEmployees = async (req, res) => {
   }
 };
 
-// POST add employee
+
 exports.addEmployee = async (req, res) => {
   const { name, email, designation } = req.body;
 

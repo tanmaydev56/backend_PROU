@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-// Initialize database (PostgreSQL)
+
 const db = require("./db");
 
 const employeeRoutes = require("./routes/employeeRoutes");

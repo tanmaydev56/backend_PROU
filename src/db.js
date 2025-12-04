@@ -38,7 +38,7 @@
 
 // module.exports = db;
 
-// using posgresql
+// using posgresql render
 
 const { Pool } = require("pg");
 require("dotenv").config();

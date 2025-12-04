@@ -1,4 +1,4 @@
-// Simple RBAC middleware — demo-only version
+
 module.exports = function requireAdmin(req, res, next) {
   const role = req.header("x-user-role");
 
